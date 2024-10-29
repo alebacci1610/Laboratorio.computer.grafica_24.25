@@ -4,7 +4,7 @@ let gridWidth, gridHeight;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB, 360, 100, 100); //per una questione di comodità nel gestire i colori
   noLoop();
   
   // Calcola il numero di celle per larghezza e altezza
@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 95); // Sfondo grigio chiaro in modalità HSB
+  background(0, 0, 95); // questo è il codice dello sfondo  
   
   // Calcola l'offset per centrare la griglia
   let offsetX = (width - gridWidth * cellSize) / 2;
@@ -52,7 +52,7 @@ function drawSmallCircle(size, circleRadius) {
   fill(hue, saturation, brightness);
   noStroke();
   
-  let angle = random(TWO_PI);
+  let angle = random(TWO_PI); //due pi greco per garantire ogni angolo del cerchio
   let r = random(circleRadius * 0.8);
   let x = size/2 + cos(angle) * r;
   let y = size/2 + sin(angle) * r;
@@ -63,7 +63,7 @@ function drawSmallCircle(size, circleRadius) {
 }
 
 function drawCurvedLine(size, circleRadius) {
-  let hue = random(200, 240);
+  let hue = random(200, 240); 
   let saturation = random(50, 100);
   let brightness = random(70, 100);
   stroke(hue, saturation, brightness);
@@ -72,11 +72,11 @@ function drawCurvedLine(size, circleRadius) {
   noFill();
   beginShape();
   
-  let startAngle = random(TWO_PI);
+  let startAngle = random(TWO_PI); //questo garantisce che la linea parta in un punto della circonferenza
   let startX = size/2 + cos(startAngle) * circleRadius;
   let startY = size/2 + sin(startAngle) * circleRadius;
   
-  let endAngle = random(TWO_PI);
+  let endAngle = random(TWO_PI); //questo invece garantisce che la linea finisca in un punto della circonferenza
   let endX = size/2 + cos(endAngle) * circleRadius;
   let endY = size/2 + sin(endAngle) * circleRadius;
   
